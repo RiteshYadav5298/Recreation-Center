@@ -1,0 +1,111 @@
+﻿@model IEnumerable<Member>
+@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+	Layout = "_DashboardLayout";
+}
+
+
+<div class="container py-5">
+	<div class="row">
+		<div class="col-md-6 mx-auto">
+			<div class="text-center">
+				<p class="h3">User Selected DVD</p>
+				<div class="row my-4">
+					<div class="col-md-8 mx-auto">
+						<img src="/img/DVDStock.jpg" alt="Out of Stock SVG" class="img-fluid" />
+					</div>
+				</div>
+				<p><code> Search DVD Loan Details.</code></p>
+			</div>
+		</div>
+	</div>
+
+
+	@*<div class="col-md-10 mx-auto">
+		<form action="/User/lastDVDData" method="post">
+			<!-- Author Input -->
+			<div class="input-group col-lg-6 mb-4">
+				<div class="input-group-prepend">
+					<span class="input-group-text bg-white px-4 border-md border-right-0">
+						<i class="fa fa-address-book text-muted"></i>
+					</span>
+				</div>
+				<select id="producer" name="CopyNumber" class="form-control custom-select bg-white border-left-0 border-md" required>
+					<option value="">Select an DVD Title</option>
+					@foreach (var author in ViewBag.listss)
+					{
+						<option value="@author.CopyNumber"> @author.CopyNumber</option>
+					}
+				</select>
+			</div>
+
+			<div class="text-center">
+				<button class="btn btn-primary">View Data <i class="fas fa-check ml-2"></i></button>
+			</div>
+		</form>
+
+	</div>
+	<hr class="my-5" />*@
+
+	<div my-4>
+		<header class="mb-4">
+			<p class="h3 text-center"> DVD Loan History Data <i class="fas fa-chevron-down ml-2"></i></p>
+		</header>
+		<div class="row my-4">
+			<div class="col-lg-11 mx-auto">
+				<div class="card rounded shadow border-0">
+					<div class="card-body p-5 bg-white rounded">
+						<div class="table-responsive">
+							<table id="example" style="width:100%" class="table table-striped table-bordered">
+								<thead>
+									<tr>
+										
+										<th scope="col">Member</th>
+										<th scope="col">Total Loan</th>
+										
+									</tr>
+								</thead>
+								<tbody>
+									@if (Model != null)
+									{
+
+										@foreach (var it in Model)
+										{
+											<tr>
+												@foreach (var items in (List<LoanCountViewModel>)ViewBag.d)
+												{	
+													@foreach (var i in ViewBag.de)
+										{
+														if (@items.Name == @it.MemberNumber && @i.MembershipCategoryTotalLoans <= @items.Count)
+														{
+															<td>@it.MemberFirstName</td>
+															<td>@items.Count</td>
+															break;
+														}
+														break;
+													}
+												}
+											</tr>
+										}
+
+									}
+									else
+									{
+									<td>no item</td>
+									}
+
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>

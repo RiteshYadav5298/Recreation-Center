@@ -1,0 +1,187 @@
+﻿
+
+@{
+    Layout = "_DashboardLayout";
+}
+
+<div class="container">
+    <header class="text-center">
+        <h1 class="display-4 font-weight-bold">Add New DVD Titles</h1>
+    </header>
+</div>
+
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="text-center">
+                <div class="row mb-4">
+                    <div class="col-md-8 mx-auto">
+                      @*  <img src="/img/" alt="DVD SVG" class="img-fluid" />*@
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-10 mx-auto">
+            <form action="/DVD/AddDVDTitles" method="post">
+                <div class="row">
+
+                    <!-- Book Title -->
+                    <div class="input-group col-lg-12 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-book text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="title" type="text" name="dvdtitle" placeholder="DVD Title" class="form-control bg-white border-left-0 border-md" required>
+                    </div>
+
+
+                    <!-- Book Description -->
+                    <div class="col-md-12 mb-0">
+                            <label for="releasedate">Released Date<i class="fas fa-ellipsis-h ml-2"></i></label>
+                        </div>
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-calendar text-muted"></i>
+                                </span>
+                            </div>
+                            <input type="date" name="release" placeholder="" class="form-control py-4 px-4" id="releasedate">
+                        </div>
+
+                    <!-- Book Category -->
+                    <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-book-open text-muted"></i>
+                            </span>
+                        </div>
+                        <select id="countryCode" name="category" class="custom-select form-control bg-white border-left-0 border-md h-100 font-weight-bold text-muted" required>
+                            <option value="">Choose a Category</option>
+                            @foreach (var category in ViewBag.categoryList)
+                            {
+                <option value="@category.CategoryNumber"> @category.CategoryDescription</option>
+}
+
+                        </select>
+                    </div>
+
+
+                    <!-- Book Author  -->
+                    <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-address-book text-muted"></i>
+                            </span>
+                        </div>
+                        <select id="producer" name="producer" class="form-control custom-select bg-white border-left-0 border-md" required>
+                            <option value="">Select an producer</option>
+                            @foreach (var author in ViewBag.producerList)
+                            {
+                <option value="@author.ProducerNumber"> @author.ProducerName</option>}
+                        </select>
+                    </div>
+                     <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-address-book text-muted"></i>
+                            </span>
+                        </div>
+                        <select id="producer" name="studio" class="form-control custom-select bg-white border-left-0 border-md" required>
+                            <option value="">Select an studio</option>
+                            @foreach (var author in ViewBag.studioList)
+                            {
+                <option value="@author.StudioNumber"> @author.StudioName</option>}
+                        </select>
+                    </div>
+
+                    <!-- Price -->
+                    <div class="input-group col-lg-6 mb-4" required>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-money-bill text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="sprice" type="number" name="stcharge" placeholder="Standard Charge" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+                    <!-- Stock Quantity -->
+                    <div class="input-group col-lg-6 mb-4" required>
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-money-bill text-muted"></i>
+                            </span>
+                        </div>
+                        <input id="pcharge" type="number" name="pencharge" placeholder="Penalty charge" class="form-control bg-white border-left-0 border-md">
+                    </div>
+
+
+                </div>
+                <div class="text-center">
+                    <button class="btn btn-primary">Add DVD Titles<i class="fas fa-plus ml-2"></i></button>
+                </div>
+            </form>
+        </div>
+        <hr class="my-5" />
+
+    <div my-4>
+        <header class="mb-4">
+            <p class="h3 text-center">Existing DVD Titles <i class="fas fa-chevron-down ml-2"></i></p>
+        </header>
+        <div class="row my-4">
+            <div class="col-lg-7 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+
+                        <!-- Responsive table -->
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">DVD Title</th>
+                                        <th scope="col">Date Released</th>
+                                        <th scope="col">Studio Number</th>
+                                        <th scope="col">Producer Number</th>
+                                        <th scope="col">Category Number</th>
+                                        <th scope="col">Standard Charge</th>
+                                        <th scope="col">Penalty Charge</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.DVDNumber</td>
+                                            <td>@item.DVDtitle</td>
+                                            <td>@item.DateReleased</td>
+                                            <td>@item.StudioNumber</td>
+                                            <td>@item.ProducerNumber</td>
+                                            <td>@item.CategoryNumber</td>
+                                            <td>@item.StandardCharge</td>
+                                            <td>@item.PenaltyCharge</td>
+                                            <td>
+                                                <ul class="list-inline m-0">
+                                                    <li class="list-inline-item">
+                                                        <a href="@Url.Action("DeleteDVDTitle","DVD",new { item.DVDNumber} )" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+      </div>
+    </div>
+
+    
+</div>

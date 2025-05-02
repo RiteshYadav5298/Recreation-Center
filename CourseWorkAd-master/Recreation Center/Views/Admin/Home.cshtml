@@ -1,0 +1,103 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+
+@{
+    Layout = "_DashboardLayout";
+}
+
+@if (ViewBag.iscustadd)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>New Member added successfully!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+else if (ViewBag.isdeletecust)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Member Deleted!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+else if (ViewBag.isdeleteuser)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>User Deleted!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+else if (ViewBag.isadduser)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>User added successfully!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+else if (ViewBag.islogin)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>Successfully Logged In!</strong> Welcome to DVD Rental Admin Panel.
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+
+@{
+    var claimsPrinciple = User.Claims;
+    var c = claimsPrinciple.Where(a => a.Type == "UserType").FirstOrDefault();
+    @if (@c.Value.Equals("admin"))
+    {
+        
+        <h1>Welcome Admin!!!</h1>
+    }
+}
+
+<div class="container-fluid">
+    <section class="py-5">
+        <div class="row">
+            <div class="col-md-8 mx-auto p-3">
+                <div class="row">
+                    <div class="col-lg-6 mb-4 mb-xl-0 p-4">
+                        <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+                            <div class="flex-grow-1 d-flex align-items-center">
+                                <div class="text text-center">
+                                    <a href="@Url.ActionLink("AddUser", "Admin")">
+                                        <img src="~/img/add_user.svg" alt="Add User SVG" class="img-fluid" />
+                                        <h6 class="mb-0">Add New User</h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="icon text-white bg-green p-4"><i class="fas fa-plus"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-6 mb-4 mb-xl-0 p-4">
+                        <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+                            <div class="flex-grow-1 d-flex align-items-center">
+                                <div class="text">
+                                    <a href="@Url.ActionLink("ManageUsers", "Admin")">
+                                        <img src="~/img/manage_users.jpg" alt="Manage User SVG" class="img-fluid" />
+                                        <h6 class="mb-0">Manage Users</h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="icon text-white bg-green p-4"><i class="fas fa-bars"></i></div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

@@ -1,0 +1,93 @@
+﻿
+@{
+    Layout = "_DashboardLayout";
+}
+
+<div class="container-fluid px-xl-5">
+    <section class="pt-5">
+        <div class="row">
+            <div class="col-xl-5 col-lg-6 mb-4 mb-xl-0 mx-auto">
+                <img src="~/img/dashboardlogo.png" alt="Add User SVG" class="img-fluid" />
+                @{
+							var claimsPrinciple = User.Claims;
+							var c = claimsPrinciple.Where(a => a.Type == "UserType").FirstOrDefault();
+							@if (@c.Value.Equals("admin"))
+							{
+								<p class="text-center h3 my-3">Welcome to Admin Dashboard! <i class="fas fa-th text-primary"></i></p>
+							}
+                            else{
+                                <p class="text-center h3 my-3">Welcome to User Dashboard! <i class="fas fa-th text-primary"></i></p>
+                            }
+							
+						}
+                
+            </div>
+        </div>
+    </section>
+</div>
+
+<div class="container-fluid">
+    <section class="pb-5">
+        <div class="row">
+            <div class="col-md-11 mx-auto p-3">
+                <div class="row">
+                    <div class="col-lg-3 mb-4 mb-xl-0 p-4">
+                        <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+                            <div class="flex-grow-1 d-flex align-items-center">
+                                <div class="text text-center">
+                                    <a href="@Url.ActionLink("InactiveMembers", "User")">
+                                        <img src="~/img/check.jpg" alt="Add User SVG" class="img-fluid" />
+                                        <h6 class="mb-0">Inactive Members</h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="icon text-white bg-green p-4"><i class="fas fa-bars"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 mb-4 mb-xl-0 p-4">
+                        <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+                            <div class="flex-grow-1 d-flex align-items-center">
+                                <div class="text">
+                                    <a href="@Url.ActionLink("InactiveDVD", "User")">
+                                        <img src="~/img/musiclogo.jpg" alt="Manage User SVG" class="img-fluid" />
+                                        <h6 class="mb-0">Inactive DVD</h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="icon text-white bg-green p-4"><i class="fas fa-bars"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 mb-4 mb-xl-0 p-4">
+                        <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+                            <div class="flex-grow-1 d-flex align-items-center">
+                                <div class="text">
+                                    <a href="@Url.ActionLink("OnLoanData", "User")">
+                                        <img src="~/img/loanDVD.jpg" alt="Add Customer SVG" class="img-fluid" />
+                                        <h6 class="mb-0">DVD on Loan</h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="icon text-white bg-green p-4"><i class="fas fa-eye"></i></div>
+                        </div>
+                    </div>
+
+                    <div class="col-lg-3 mb-4 mb-xl-0 p-4">
+                        <div class="bg-white shadow roundy p-4 h-100 d-flex align-items-center justify-content-between">
+                            <div class="flex-grow-1 d-flex align-items-center">
+                                <div class="text">
+                                    <a href="@Url.ActionLink("OldDVD", "User")">
+                                        <img src="~/img/oldDVDmusic.jpg" alt="Add Customer SVG" class="img-fluid" />
+                                        <h6 class="mb-0">Old DVD Data</h6>
+                                    </a>
+                                </div>
+                            </div>
+                            <div class="icon text-white bg-green p-4"><i class="fas fa-eye"></i></div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</div>

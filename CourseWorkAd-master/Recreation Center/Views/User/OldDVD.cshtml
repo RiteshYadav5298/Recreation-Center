@@ -1,0 +1,83 @@
+﻿
+@{ Layout = "_DashboardLayout"; }
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="text-center">
+                <p class="h3">Long Stocked Items</p>
+                <div class="row my-4">
+                    <div class="col-md-8 mx-auto">
+                        <img src="/img/DVDStock.jpg" alt="Out of Stock SVG" class="img-fluid" />
+                    </div>
+                </div>
+                <p><code>These DVD have been in stock for a long time.</code></p>
+            </div>
+        </div>
+    </div>
+
+    <div my-4>
+        <div class="row py-5">
+            <div class="col-lg-11 mx-auto">
+                <div class="card rounded shadow border-0">
+                    <div class="card-body p-5 bg-white rounded">
+                        <!--reponsive table-->
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">DVD Title</th>
+                                        <th scope="col">Category Number</th>
+       
+                                        <th scope="col">Studio Number</th>
+                                        <th scope="col">Producer Number</th>
+                                        <th scope="col">Release Date</th>
+                                        <th scope="col">Standard Charge</th>
+                                        <th scope="col">Penalty Charge</th>
+                                        <th scope="col">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        @foreach (var item in Model)
+                                    {
+                                    <tr>
+                                        <td>@item.DVDNumber</td>
+                                        <td>@item.DVDtitle</td>
+                                        <td>@item.CategoryNumber</td>
+                                        
+                                        <td>@item.StudioNumber</td>
+                                        <td>@item.ProducerNumber</td>
+                                        <td>@item.DateReleased</td>
+                                        <td>@item.StandardCharge</td>
+                                        <td>@item.PenaltyCharge</td>
+                                        
+                                        <th>
+                                            <a href="@Url.Action("DeleteDVDTitle","DVD",new { item.DVDNumber} )" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                        </th>
+                                    </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <td>No item</td>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <div class="text-center">
+            <a href="@Url.Action("DeleteAlloldDVDS","User")" class="btn btn-primary px-4">Remove all DVD from Stock <i class="fas fa-minus-square ml-2"></i></a>
+        </div>
+
+    </div>
+</div>

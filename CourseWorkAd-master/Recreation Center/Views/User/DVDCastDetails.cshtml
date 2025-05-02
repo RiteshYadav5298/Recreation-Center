@@ -1,0 +1,109 @@
+﻿@*
+	For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+
+@{
+	Layout = "_DashboardLayout";
+}
+
+<div class="container py-5">
+	<div class="row">
+		<div class="col-md-6 mx-auto">
+			<div class="text-center">
+				<p class="h3">DVD Cast Details</p>
+				<div class="row my-4">
+					<div class="col-md-8 mx-auto">
+						
+					</div>
+				</div>
+				<p><code> Search DVD Cast Details.</code></p>
+			</div>
+		</div>
+	</div>
+
+
+	
+	<div my-4>
+		<header class="mb-4">
+			<p class="h3 text-center"> DVD Cast Details <i class="fas fa-chevron-down ml-2"></i></p>
+		</header>
+		<div class="row my-4">
+			<div class="col-lg-11 mx-auto">
+				<div class="card rounded shadow border-0">
+					<div class="card-body p-5 bg-white rounded">
+						<div class="table-responsive">
+							<table id="example" style="width:100%" class="table table-striped table-bordered">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">Title</th>
+										<th scope="col">Producer</th>
+										<th scope="col">Studio</th>
+										<th scope="col">Actor</th>
+										<th scope="col">Date Released</th>
+									</tr>
+								</thead>
+								<tbody>
+									@if (ViewBag.title != null)
+									{
+										@foreach (var dvd in ViewBag.title)
+										{
+
+
+											<tr>
+												<th scope="row">@dvd.DVDNumber</th>
+												<th scope="row">@dvd.DVDtitle</th>
+												@foreach (var items in ViewBag.producer)
+												{
+
+													if (@items.ProducerNumber == @dvd.ProducerNumber)
+													{
+														<td>@items.ProducerName </td>
+														break;
+													}
+
+												}
+												@foreach (var item in ViewBag.stud)
+												{
+													if (@item.StudioNumber == @dvd.StudioNumber)
+													{
+														<td>@item.StudioName </td>
+														break;
+													}
+												}
+												@foreach (var i in ViewBag.cast)
+												{
+													@foreach (var s in ViewBag.actor)
+													{
+														if (@i.DVDNumber == @dvd.DVDNumber && @i.ActorNumber == @s.ActorNumber)
+														{
+															<td>@s.ActorFirstName @s.ActorSurname</td>
+															break;
+														}
+														break;
+													}
+												}
+
+												<td>@dvd.DateReleased</td>
+
+
+											</tr>
+										}
+									}
+									else
+									{
+									<td>no item</td>
+									}
+
+
+								</tbody>
+							</table>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+
+
+</div>

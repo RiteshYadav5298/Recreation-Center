@@ -1,0 +1,200 @@
+is_global = true
+build_property.TargetFramework = net6.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = CourseWorkAd
+build_property.RootNamespace = CourseWorkAd
+build_property.ProjectDir = E:\ADCoursework\CourseWorkAd\CourseWorkAd\
+build_property.RazorLangVersion = 6.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = true
+build_property.MSBuildProjectDirectory = E:\ADCoursework\CourseWorkAd\CourseWorkAd
+build_property._RazorSourceGeneratorDebug = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Admin/Addmembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkbWVtYmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Admin/AddMemCategory.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkTWVtQ2F0ZWdvcnkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Admin/AddUser.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cQWRkVXNlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Admin/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cSG9tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Admin/ManageMembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlTWVtYmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Admin/ManageUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWFuYWdlVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Admin/Members.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cTWVtYmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Admin/UpdateMembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlTWVtYmVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Admin/UpdateUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcQWRtaW5cVXBkYXRlVXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/DVD/Actor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRFZEXEFjdG9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/DVD/AddDVDTitles.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRFZEXEFkZERWRFRpdGxlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/DVD/Cast.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRFZEXENhc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/DVD/Category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRFZEXENhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/DVD/Copy.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRFZEXENvcHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/DVD/DVDListData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRFZEXERWRExpc3REYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/DVD/DVDSearch.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRFZEXERWRFNlYXJjaC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/DVD/Producer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRFZEXFByb2R1Y2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/DVD/Studio.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcRFZEXFN0dWRpby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Home/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Home/Login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9tZVxMb2dpbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Loan/AddLoans.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblxBZGRMb2Fucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Loan/Addloantype.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblxBZGRsb2FudHlwZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Loan/Pay.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblxQYXkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Loan/Return.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblxSZXR1cm4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Loan/ReturnDVD.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9hblxSZXR1cm5EVkQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Member/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXEhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Member/ProfileData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFByb2ZpbGVEYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Member/PurchaseHistoryDatas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTWVtYmVyXFB1cmNoYXNlSGlzdG9yeURhdGFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Shared/_DashboardLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9EYXNoYm9hcmRMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Shared/_IndexLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9JbmRleExheW91dC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Shared/_NormalUsers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9Ob3JtYWxVc2Vycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/User/Dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEYXNoYm9hcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/User/DVDCastDetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxEVkRDYXN0RGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/User/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/User/InactiveDVD.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmFjdGl2ZURWRC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/User/InactiveMembers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxJbmFjdGl2ZU1lbWJlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/User/lastDVDData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxsYXN0RFZERGF0YS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/User/OldDVD.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxPbGREVkQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/User/OnLoanData.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxPbkxvYW5EYXRhLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/User/Password.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxQYXNzd29yZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/User/Toomuchloan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcVXNlclxUb29tdWNobG9hbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/wwwroot/vendor/customerdetails.cshtml]
+build_metadata.AdditionalFiles.TargetPath = d3d3cm9vdFx2ZW5kb3JcY3VzdG9tZXJkZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[E:/ADCoursework/CourseWorkAd/CourseWorkAd/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-hyuczgb8pi

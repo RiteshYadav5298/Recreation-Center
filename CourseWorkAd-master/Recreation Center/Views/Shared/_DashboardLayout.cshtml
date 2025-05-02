@@ -1,0 +1,184 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>DVD Rental - Admin Panel</title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="robots" content="all,follow">
+    <!-- Bootstrap CSS-->
+    <link rel="stylesheet" href="/vendor/bootstrap/css/bootstrap.min.css">
+    <!-- Font Awesome CSS-->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
+    <!-- Google fonts - Popppins for copy-->
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins:300,400,800">
+    <!-- orion icons-->
+    <link rel="stylesheet" href="/css/orionicons.css">
+    <!-- theme stylesheet-->
+    <link rel="stylesheet" href="/css/style.sea.css" id="theme-stylesheet">
+    <!-- Custom stylesheet - for your changes-->
+    <link rel="stylesheet" href="/css/custom.css">
+    <!-- Favicon-->
+    <link rel="shortcut icon" href="img/favicon.png?3">
+    <!-- Tweaks for older IEs-->
+    
+    <style>
+        body {
+            background-image: url("../../wwwroot/img/booklib.jpg")
+        }
+    </style>
+
+    @RenderSection("manualCSS", false)
+</head>
+<body>
+    <!-- navbar-->
+    <header class="header">
+        <nav class="navbar navbar-expand-lg px-4 py-2 bg-white shadow">
+            <a href="#" class="sidebar-toggler text-gray-500 mr-4 mr-lg-5 lead"><i class="fas fa-align-left"></i></a>
+            @if (ViewBag.isLogin == null)
+            {
+                <div></div>
+            }
+            else if (ViewBag.isLogin)
+            {
+                <div class="alert alert-success alert-dismissible fade show" role="alert">
+
+                    <strong>Successfully Logged In!</strong> Welcome to DVD Rental Admin Panel.
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+            }
+
+              @{
+				var claimsPrinciple2 = User.Claims;
+				var c2 = claimsPrinciple2.Where(a => a.Type == "UserType").FirstOrDefault();
+				@if (@c2.Value.Equals("admin"))
+							{
+				<a href="@Url.ActionLink("Home", "Admin")" class="navbar-brand font-weight-bold text-uppercase text-base">DVD Rental Admin Dashboard</a>
+				}
+				else
+				{
+					<a href="@Url.ActionLink("Home", "Admin")" class="navbar-brand font-weight-bold text-uppercase text-base">DVD Rental User Dashboard</a>
+				}
+
+						}
+			
+			<ul class="ml-auto d-flex align-items-center list-unstyled mb-0">
+
+				<li class="nav-item dropdown ml-auto">
+					<a id="userInfo" href="http://example.com" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" class="nav-link dropdown-toggle"><img src="/img/users.png" style="max-width: 2.5rem;" class="img-fluid rounded-circle shadow"></a>
+					<div aria-labelledby="userInfo" class="dropdown-menu">
+						@{
+							var claimsPrinciple3 = User.Claims;
+							var c3 = claimsPrinciple3.Where(a => a.Type == "UserType").FirstOrDefault();
+							@if (@c3.Value.Equals("admin"))
+							{
+								<a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">Admin</strong></a>
+							}
+							else
+							{
+								<a href="#" class="dropdown-item"><strong class="d-block text-uppercase headings-font-family">User</strong></a>
+							}
+
+						}
+						
+						<div class="dropdown-divider"></div>
+						@{
+							var claimsPrinciple = User.Claims;
+							var c = claimsPrinciple.Where(a => a.Type == "UserType").FirstOrDefault();
+							@if (@c.Value.Equals("admin"))
+							{
+								<a href="@Url.ActionLink("ManageUsers", "Admin")" class="dropdown-item">Manage Users</a>
+							}
+							
+						}
+						<a href="@Url.ActionLink("Password", "User")" class="dropdown-item">Change Password</a>
+
+						<div class="dropdown-divider"></div><a href="/Home/Logout" class="dropdown-item">Logout</a>
+					</div>
+				</li>
+			</ul>
+        </nav>
+    </header>
+    <div class="d-flex align-items-stretch">
+        <div id="sidebar" class="sidebar py-3">
+            <div class="text-gray-400 text-uppercase px-3 px-lg-4 py-4 font-weight-bold small headings-font-family">MAIN</div>
+            <ul class="sidebar-menu list-unstyled">
+                <li class="sidebar-list-item"><a href="@Url.ActionLink("Dashboard", "User")" class="sidebar-link text-muted"><i class="o-network-1 mr-3 text-gray"></i><span>Dashboard</span></a></li>
+                @{
+                    var claimsPrinciple1 = User.Claims;
+                    var c1 = claimsPrinciple.Where(a => a.Type == "UserType").FirstOrDefault();
+                    @if (@c1.Value.Equals("admin"))
+                    {
+                <li class="sidebar-list-item"><a href="@Url.ActionLink("Home", "Admin")" class="sidebar-link text-muted"><i class="o-user-1 mr-3 text-gray"></i><span>Admin</span></a></li>
+                    }
+                }
+                <li class="sidebar-list-item">
+                    <a href="#" data-toggle="collapse" data-target="#page" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-profile-1 mr-3 text-gray"></i><span>Member</span></a>
+                    <div id="page" class="collapse">
+                        <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("Home", "Member")" class="sidebar-link text-muted pl-lg-5">Member</a></li>
+                            
+                        </ul>
+                    </div>
+                </li>
+                
+                <li class="sidebar-list-item">
+                    <a href="#" data-toggle="collapse" data-target="#pages" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-news-article-1 mr-3 text-gray"></i><span>DVD</span></a>
+                    <div id="pages" class="collapse">
+                        <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("Category", "DVD")" class="sidebar-link text-muted pl-lg-5">Add Category</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("Actor", "DVD")" class="sidebar-link text-muted pl-lg-5">Add Actor</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("Copy", "DVD")" class="sidebar-link text-muted pl-lg-5">Add DVD Copy</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("Producer", "DVD")" class="sidebar-link text-muted pl-lg-5">Add Producer</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("Studio", "DVD")" class="sidebar-link text-muted pl-lg-5"> Add Studio</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("Cast", "DVD")" class="sidebar-link text-muted pl-lg-5">Add Cast</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("DVDSearch", "DVD")" class="sidebar-link text-muted pl-lg-5">Search DVD</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("DVDListData", "DVD")" class="sidebar-link text-muted pl-lg-5">DVD Not on Loan</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("AddDVDTitles", "DVD")" class="sidebar-link text-muted pl-lg-5">Add DVD Titles</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("lastDVDData", "User")" class="sidebar-link text-muted pl-lg-5">DVD Copy History</a></li>
+                             <li class="sidebar-list-item"><a href="@Url.ActionLink("DVDCastDetails", "User")" class="sidebar-link text-muted pl-lg-5">DVD Details</a></li>
+                             <li class="sidebar-list-item"><a href="@Url.ActionLink("Toomuchloan", "User")" class="sidebar-link text-muted pl-lg-5">Too much loan</a></li>
+                        </ul>
+                    </div>
+                </li>
+                <li class="sidebar-list-item">
+                    <a href="#" data-toggle="collapse" data-target="#page" aria-expanded="false" aria-controls="pages" class="sidebar-link text-muted"><i class="o-profile-1 mr-3 text-gray"></i><span>Loans</span></a>
+                    <div id="page" class="collapse">
+                        <ul class="sidebar-menu list-unstyled border-left border-primary border-thick">
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("AddLoans", "Loan")" class="sidebar-link text-muted pl-lg-5">Add Loans</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("Addloantype", "Loan")" class="sidebar-link text-muted pl-lg-5">Add Loan Type</a></li>
+                            <li class="sidebar-list-item"><a href="@Url.ActionLink("ReturnDVD", "Loan")" class="sidebar-link text-muted pl-lg-5">Return Loans</a></li>
+                            
+                        </ul>
+                    </div>
+                </li>
+            </ul>
+        </div>
+        <div class="page-holder w-100 d-flex flex-wrap">
+
+            @RenderBody()
+
+            <footer class="footer bg-white shadow align-self-end py-3 px-xl-5 w-100">
+                <div class="container-fluid">
+                    <div class="row">
+                        <div class="col-md-6 text-center text-md-left text-primary">
+                            <p class="mb-2 mb-md-0">Marshal Team Development &copy; 2022</p>
+                        </div>
+                        
+                    </div>
+                </div>
+            </footer>
+        </div>
+    </div>
+    <!-- JavaScript files-->
+    <script src="~/vendor/jquery/jquery.js"></script>
+    <script src="~/vendor/popper.js/popper.js"></script>
+    <script src="~/vendor/bootstrap/js/bootstrap.js"></script>
+    <script src="~/js/front.js"></script>
+
+    @RenderSection("manualJS", false)
+</body>
+</html>

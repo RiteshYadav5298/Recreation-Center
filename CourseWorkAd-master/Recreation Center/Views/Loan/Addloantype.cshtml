@@ -1,0 +1,106 @@
+﻿
+@{ Layout = "_DashboardLayout"; }
+
+
+<div class="container-fluid px-xl-5">
+    <section class="py-5">
+
+        <div class="row py-5 mt-4 align-items-center">
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+                @*<img src="~/img/insert_sale.svg" alt="Insert Sale Item SVG" class="img-fluid" />*@
+                <h1>Add New Loan Type</h1>
+            </div>
+
+            <!-- Registeration Form -->
+            <div class="col-md-7 col-lg-6 ml-auto">
+                <form action="/Loan/Addloantype" method="post" >
+                    <div class="row">
+
+                        
+
+                        <!-- Quantity -->
+                        <div class="input-group col-lg-6 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-list-ol text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="loan" type="text" name="loantype" placeholder="Loan Type" class="form-control bg-white border-left-0 border-md" required>
+                        </div>
+
+                        <!-- Total -->
+                        <div class="input-group col-lg-12 mb-4">
+                            <div class="input-group-prepend">
+                                <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                    <i class="fa fa-calculator text-muted"></i>
+                                </span>
+                            </div>
+                            <input id="amount" type="number" name="durat" placeholder="Loan Duration" class="form-control bg-white border-left-0 border-md" required>
+                        </div>
+
+
+                        <!-- Submit Button -->
+                        <div class="form-group col-lg-12 mx-auto mb-0">
+                            <button class="btn btn-primary btn-block py-2">
+                                <span class="font-weight-bold">Add Loan type <i class="fas fa-cart-plus ml-2"></i></span>
+                            </button>
+                        </div>
+
+                    </div>
+                </form>
+            </div>
+            <div my-4>
+        <div class="row my-4">
+            <div class="col-lg-11 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+
+                        <!-- Responsive table -->
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Loan type</th>
+                                        <th scope="col">Loan Duration</th>
+                                        
+                                        <th scope="col"> Action </th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (ViewBag.typeList != null)
+                                    {
+                                        @foreach (var item in ViewBag.typelist)
+                                    {
+                                        <tr>
+                                            <td>@item.LoanTypeNumber</td>
+                                            <td>@item.Loantype</td>
+                                            <td>@item.LoanDuration</td>
+                                            
+                                            <td>
+                                                 <li class="list-inline-item">
+                                                        <a href="@Url.Action("DeleteloanType","Loan",new { item.LoanTypeNumber} )" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Check Out"><i class="fa fa-trash"></i></a>
+                                                    </li>
+                                            </td>
+                                            
+                                        </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <td>No item</td>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+</div>

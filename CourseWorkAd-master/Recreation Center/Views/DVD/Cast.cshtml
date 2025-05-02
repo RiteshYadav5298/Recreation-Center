@@ -1,0 +1,121 @@
+﻿@{ Layout = "_DashboardLayout"; }
+@if (ViewBag.issuccess)
+{
+    <div class="alert alert-success alert-dismissible fade show" role="alert">
+        <strong>New cast added successfully!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+else if (ViewBag.isdeletecas)
+{
+    <div class="alert alert-danger alert-dismissible fade show" role="alert">
+        <strong>Cast Deleted!</strong>
+        <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+        </button>
+    </div>
+}
+<div class="container">
+    <header class="text-center">
+        <h1 class="display-4 font-weight-bold">Add New Cast Member</h1>
+    </header>
+</div>
+
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="text-center">
+                <div class="row mb-4">
+                    <div class="col-md-6 mx-auto">
+                        <img src="/img/members.svg" alt="Author SVG" class="img-fluid" />
+                    </div>
+                </div>
+            </div>
+
+            <form action="/DVD/AddCast" method="post">
+                <!-- Author Input -->
+                <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-address-book text-muted"></i>
+                            </span>
+                        </div>
+                        <select id="producer" name="numb" class="form-control custom-select bg-white border-left-0 border-md" required>
+                            <option value="">Select an Actor Name</option>
+                            @foreach (var author in ViewBag.actorList)
+                            {
+                <option value="@author.ActorNumber"> @author.ActorFirstName</option>}
+                        </select>
+                    </div>
+                <div class="input-group col-lg-6 mb-4">
+                        <div class="input-group-prepend">
+                            <span class="input-group-text bg-white px-4 border-md border-right-0">
+                                <i class="fa fa-address-book text-muted"></i>
+                            </span>
+                        </div>
+                        <select id="dvdnumber" name="title" class="form-control custom-select bg-white border-left-0 border-md" required>
+                            <option value="">Select an DVD Title</option>
+                            @foreach (var author in ViewBag.titleList)
+                            {
+                <option value="@author.DVDNumber"> @author.DVDtitle</option>}
+                        </select>
+                    </div>
+
+                <div class="text-center">
+                    <button class="btn btn-primary">Add Cast <i class="fas fa-check ml-2"></i></button>
+                </div>
+            </form>
+
+        </div>
+    </div>
+
+    <hr class="my-5" />
+
+    <div my-4>
+        <header class="mb-4">
+            <p class="h3 text-center">Existing Cast <i class="fas fa-chevron-down ml-2"></i></p>
+        </header>
+        <div class="row my-4">
+            <div class="col-lg-7 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+
+                        <!-- Responsive table -->
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        
+                                        <th scope="col">Actor Number</th>
+                                        <th scope="col">DVD Number</th>
+                                        <th scope="col">Action</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.ActorNumber</td>
+                                            <td>@item.DVDNumber</td>
+                                            <td>
+                                                <ul class="list-inline m-0">
+                                                    <li class="list-inline-item">
+                                                        <a href="@Url.Action("DeleteCast","DVD",new { item.DVDNumber} )" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Delete"><i class="fa fa-trash"></i></a>
+                                                    </li>
+                                                </ul>
+                                            </td>
+                                        </tr>
+                                    }
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

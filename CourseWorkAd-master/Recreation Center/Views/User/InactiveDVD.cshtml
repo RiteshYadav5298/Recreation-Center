@@ -1,0 +1,73 @@
+﻿
+@{ Layout = "_DashboardLayout"; }
+
+<div class="container py-5">
+    <div class="row">
+        <div class="col-md-6 mx-auto">
+            <div class="text-center">
+                <div class="row mb-4">
+                    <div class="col-md-8 mx-auto">
+                        <img src="/img/DVDStock.jpg" alt="Inactive Items SVG" class="img-fluid" />
+                    </div>
+                </div>
+                <p class="h3">Inactive DVD</p>
+                <p><code>The following DVD have not been on rent for the last 31 days.</code></p>
+            </div>
+        </div>
+    </div>
+
+    <div my-4>
+        <div class="row my-4">
+            <div class="col-lg-11 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+
+                        <!-- Responsive table -->
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                        <th scope="col">#</th>
+                                        <th scope="col">Category Number</th>
+                                        <th scope="col">Studio NUmber</th>
+                                        <th scope="col">Producer Number</th>
+                                        <th scope="col">DVD Title</th>
+                                        <th scope="col">Release Date</th>
+                                        <th scope="col">Standard Charge</th>
+                                        <th scope="col">Penalty Charge</th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (Model != null)
+                                    {
+                                        @foreach (var item in Model)
+                                    {
+                                        <tr>
+                                            <td>@item.DVDNumber</td>
+                                            <td>@item.CategoryNumber</td>
+                                            <td>@item.StudioNumber</td>
+                                            <td>@item.ProducerNumber</td>
+                                            <td>@item.DVDTitle</td>
+                                            <td>@item.DateReleased</td>
+                                            <td>@item.StandardCharge</td>
+                                            <td>@item.PenaltyCharge</td>
+                                            
+                                        </tr>
+                                        }
+                                    }
+                                    else
+                                    {
+                                        <td>No item</td>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

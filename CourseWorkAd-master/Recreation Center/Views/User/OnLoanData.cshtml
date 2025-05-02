@@ -1,0 +1,120 @@
+﻿@{
+	Layout = "_DashboardLayout";
+}
+
+<div class="container py-5">
+	<div class="row">
+		<div class="col-md-6 mx-auto">
+			<div class="text-center">
+				<div class="row my-4">
+					<div class="col-md-8 mx-auto">
+						<img src="/img/DVDloan.jpg" alt="Out of Stock SVG" class="img-fluid" />
+					</div>
+				</div>
+				<p class="h3">DVD on Loan</p>
+				<p><code>The following list of DVD are currently on Loan</code></p>
+			</div>
+		</div>
+	</div>
+
+	<div my-4>
+		
+		<div class="row my-4">
+			<div class="col-lg-11 mx-auto">
+				<div class="card border-0 shadow">
+					<div class="card-body p-5">
+						<div class="table-responsive">
+							<table class="table m-0">
+								<thead>
+									<tr>
+										<th scope="col">Out Date</th>
+										<th scope="col">Total Count</th>
+									</tr>
+								</thead>
+								<tbody>
+									@if (ViewBag.re != null)
+									{
+								
+										@foreach (var items in (List<Totaldayloanmodel>)ViewBag.re)
+										{
+
+											<tr>
+												<td>@items.Dates</td>
+												<td>@items.Count</td>
+
+
+											</tr>
+										}
+									}
+									else
+									{
+									<td>No item</td>
+									}
+								</tbody>
+							</table>
+						</div>
+
+
+						<!-- Responsive table -->
+						<div class="table-responsive">
+							<table class="table m-0">
+								<thead>
+									<tr>
+										<th scope="col">#</th>
+										<th scope="col">DVD Title</th>
+										<th scope="col">DVD Copy</th>
+										<th scope="col">Member</th>
+										<th scope="col">Date out</th>
+
+
+									</tr>
+								</thead>
+								<tbody>
+									@if (Model != null)
+									{
+										@foreach (var item in Model)
+										{
+											<tr>
+												<td>@item.LoanNumber</td>
+												@foreach (var i in ViewBag.dvd)
+												{
+
+													@foreach (var a in ViewBag.copy)
+													{
+														if (@a.CopyNumber == @item.CopyNumber && @a.DVDNumber == @i.DVDNumber)
+														{
+															<td>@i.DVDtitle</td>
+
+															<td>@a.CopyNumber</td>
+														}
+													}
+												}
+												@foreach (var it in ViewBag.mem)
+												{
+													if (@it.MemberNumber == @item.MemberNumber)
+													{
+														<td>@it.MemberFirstName @it.MemberLastName</td>
+
+													}
+												}
+												<td>@item.DateOut</td>
+
+											</tr>
+										}
+									}
+									else
+									{
+									<td>No item</td>
+									}
+
+
+								</tbody>
+							</table>
+
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
+</div>

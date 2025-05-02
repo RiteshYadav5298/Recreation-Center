@@ -1,0 +1,69 @@
+﻿
+@{
+    Layout = "_DashboardLayout";
+}
+
+<div class="container-fluid px-xl-5">
+    <section class="py-5">
+
+        <div class="row py-5 mt-4 align-items-center">
+            <div class="col-md-5 pr-lg-5 mb-5 mb-md-0">
+               @* <img src="~/img/insert_sale.svg" alt="Insert Sale SVG" class="img-fluid" />*@
+                <h1>Return Loan</h1>
+            </div>
+
+            
+                <div my-4>
+        <div class="row my-4">
+            <div class="col-lg-11 mx-auto">
+                <div class="card border-0 shadow">
+                    <div class="card-body p-5">
+
+                        <!-- Responsive table -->
+                        <div class="table-responsive">
+                            <table class="table m-0">
+                                <thead>
+                                    <tr>
+                                       
+                                        <th scope="col">Total Paid</th>
+                                        
+                                        <th scope="col">Penalty Charge</th>
+                                        <th scope="col"> Action </th>
+                                        
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    @if (ViewBag.total != null)
+                                    {
+                                       
+                                        <tr>
+                                           
+                                            <td>@ViewBag.total</td>
+                                            
+                                            <td>@ViewBag.Penalty</td>
+                                            <td>
+                                                 <li class="list-inline-item">
+                                                        <a href="@Url.Action("ReturnDVD","Loan" )" class="btn btn-danger btn-sm rounded-0" type="button" data-toggle="tooltip" data-placement="top" title="Check Out"><i class="fa fa-trash"></i></a>
+                                                    </li>
+                                            </td>
+                                            
+                                        </tr>
+                                   
+                                    }
+                                    else
+                                    {
+                                        <td>No item</td>
+                                    }
+
+                                </tbody>
+                            </table>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+        </div>
+    </section>
+</div>
